@@ -10,6 +10,18 @@ const routes: Routes = [
   {
     path: 'buses',
     loadChildren: () => import('./buses/buses.module').then(m => m.BusesModule)
+  },
+  {
+    path: 'car',
+    loadChildren: () => import('./car/car.module').then(m => m.CarModule)
+  },
+  {
+    path: 'employee',
+    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
+  },
+  {
+    path: 'trip',
+    loadChildren: () => import('./trip/trip.module').then(m => m.TripModule)
   }
 ];
 @NgModule({
