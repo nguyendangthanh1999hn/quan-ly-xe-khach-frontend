@@ -73,12 +73,11 @@
     <label>
       Year Manufactured:
       <br>
-      <input  type="text" formControlName="licensePlate">
+      <input  type="text" formControlName="yearManufactured">
     </label>
   </div>
   <div *ngIf="carForm.get('yearManufactured').invalid && carForm.get('yearManufactured').touched" style="color: red">
     Year Manufactured is required and min length is 10
   </div>
-
   <button type="submit">Add Car</button>
 </form>

@@ -43,9 +43,7 @@ export class CreateComponent implements OnInit {
         longevity: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
-        lastMaintenance: new FormControl('',
-          [Validators.required,
-            Validators.minLength(1)]),
+        lastMaintenance: new FormControl(''),
       }
     );
   }

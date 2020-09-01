@@ -43,7 +43,7 @@ export class CreateComponent implements OnInit {
       this.busesService.createBuses(value)
         .subscribe(result => {
           this.busesList.push(result);
-          this.router.navigate(['buses/list'])
+          this.router.navigate(['buses/list']);
           this.successMessage = 'Add buses successfully !';
           // this.busesForm.reset({
           //   startLocation: '',
