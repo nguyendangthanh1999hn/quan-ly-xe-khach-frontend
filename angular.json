@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "car-manager-front-end"
+    }
+  },
+  "defaultProject": "car-manager-front-end",
+  "cli": {
+    "analytics": false
+  }
 }
