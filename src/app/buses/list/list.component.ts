@@ -21,5 +21,11 @@ export class ListComponent implements OnInit {
         this.failMessage = 'SHOW BUSES LIST  FAIL !';
       });
   }
-
+  deleteBuses(id: number) {
+    this.busesService.deleteBusesByID(id).subscribe( () => {
+      this.ngOnInit();
+    }, error => {
+      console.log('delete failed');
+    });
+  }
 }

@@ -1,5 +1,5 @@
 <h2>List Buses</h2>
-<a [routerLink]="['/buses-add']">Add new buses</a>
+<a [routerLink]="['/buses/create']">Add new buses</a>
 <table class="table">
   <thead class="thead-light">
   <tr>
@@ -8,6 +8,7 @@
     <th scope="col">End Location</th>
     <th scope="col">Distance</th>
     <th scope="col">Level</th>
+    <th scope="col">Action</th>
   </tr>
   </thead>
   <tbody>
@@ -17,6 +18,10 @@
     <td>{{buses.endLocation}}</td>
     <td>{{buses.distance}}</td>
     <td>{{buses.level}}</td>
+    <td>
+      <a [routerLink]="['/buses/update', buses.id]">Edit</a>
+      <button (click)="deleteBuses(buses.id)">Delete</button>
+    </td>
   </tr>
   </tbody>
 </table>
