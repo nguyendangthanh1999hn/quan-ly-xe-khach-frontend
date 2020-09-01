@@ -1,1 +1,84 @@
-<p>create works!</p>
+<form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Color:
+      <br>
+      <input type="text"  formControlName="color">
+    </label>
+  </div>
+  <div *ngIf="carForm.get('color').invalid && carForm.get('color').touched" style="color: red">
+    Color is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Last Maintenance:
+      <br>
+      <input type="date" formControlName="lastMaintenance" >
+    </label>
+  </div>
+  <div *ngIf="carForm.get('lastMaintenance').invalid && carForm.get('lastMaintenance').touched" style="color: red">
+    Last Maintenance is required and min length is 10
+  </div>
+  <div>
+    <label>
+      License Plate:
+      <br>
+      <input  type="text" formControlName="licensePlate">
+    </label>
+  </div>
+  <div *ngIf="carForm.get('licensePlate').invalid && carForm.get('licensePlate').touched" style="color: red">
+    License Plate is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Longevity:
+      <br>
+      <input  type="text" formControlName="longevity">
+    </label>
+  </div>
+  <div *ngIf="carForm.get('longevity').invalid && carForm.get('longevity').touched" style="color: red">
+    Longevity is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Manufactured:
+      <br>
+      <input  type="text" formControlName="manufactured">
+    </label>
+  </div>
+  <div *ngIf="carForm.get('manufactured').invalid && carForm.get('manufactured').touched" style="color: red">
+    Manufactured is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Model:
+      <br>
+      <input  type="text" formControlName="model">
+    </label>
+  </div>
+  <div *ngIf="carForm.get('model').invalid && carForm.get('model').touched" style="color: red">
+    Model is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Seats:
+      <br>
+      <input  type="text" formControlName="seats">
+    </label>
+  </div>
+  <div *ngIf="carForm.get('seats').invalid && carForm.get('seats').touched" style="color: red">
+    Seats is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Year Manufactured:
+      <br>
+      <input  type="text" formControlName="licensePlate">
+    </label>
+  </div>
+  <div *ngIf="carForm.get('yearManufactured').invalid && carForm.get('yearManufactured').touched" style="color: red">
+    Year Manufactured is required and min length is 10
+  </div>
+
+  <button type="submit">Add Car</button>
+</form>

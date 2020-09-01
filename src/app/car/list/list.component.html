@@ -1,1 +1,36 @@
-<p>list works!</p>
+<h2>List Car</h2>
+<a [routerLink]="['/car/create']">Add new car</a>
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Id</th>
+    <th scope="col">Color</th>
+    <th scope="col">Last Maintenance</th>
+    <th scope="col">License Plate</th>
+    <th scope="col">longevity</th>
+    <th scope="col">Manufactured</th>
+    <th scope="col">Model</th>
+    <th scope="col">Seats</th>
+    <th scope="col">Year Manufactured</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let car of carList">
+    <th scope="row">{{car.id}}</th>
+    <td>{{car.id}}</td>
+    <td>{{car.color}}</td>
+    <td>{{car.lastMaintenance}}</td>
+    <td>{{car.licensePlate}}</td>
+    <td>{{car.longevity}}</td>
+    <td>{{car.manufactured}}</td>
+    <td>{{car.model}}</td>
+    <td>{{car.seats}}</td>
+    <td>{{car.yearManufactured}}</td>
+    <td>
+      <a [routerLink]="['/car/update', car.id]">Edit</a>
+      <button (click)="deleteCar(car.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
