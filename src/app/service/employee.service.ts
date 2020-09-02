@@ -7,7 +7,7 @@ import {Employee} from '../interface/employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private readonly API_BUSES = 'http://localhost:8080/employee/'; // khai bao API trung voi request mapping trong backend
+  private readonly API_BUSES = 'http://localhost:8080/employee'; // khai bao API trung voi request mapping trong backend
   constructor(private httpClient: HttpClient) { }
 
   showEmployeeList(): Observable<Employee[]>{

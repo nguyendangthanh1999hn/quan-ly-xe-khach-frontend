@@ -8,7 +8,7 @@ import {Trip} from '../interface/trip';
 })
 export class TripService {
 
-  private readonly API_TRIP = 'http://localhost:8080/trip/';
+  private readonly API_TRIP = 'http://localhost:8080/trip';
   constructor(private httpClient: HttpClient) { }
   showTripList(): Observable<Trip[]>{
     return this.httpClient.get<Trip[]>(`${this.API_TRIP}/list`);
