@@ -59,7 +59,6 @@ export class UpdateComponent implements OnInit {
       });
   }
 
-  // tslint:disable-next-line:typedef
   onSubmit() {
     if (this.carUpdateForm.valid) {
       const {value} = this.carUpdateForm;
