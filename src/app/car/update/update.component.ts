@@ -21,18 +21,30 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.carUpdateForm = new FormGroup({
-        startLocation: new FormControl('',
+        color: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
-        endLocation: new FormControl('',
+      lastMaintenance: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
-        distance: new FormControl('',
+      licensePlate: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
-        level: new FormControl('',
+      longevity: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)])
+            Validators.minLength(1)]),
+      manufactured: new FormControl('',
+        [Validators.required,
+          Validators.minLength(1)]),
+      model: new FormControl('',
+        [Validators.required,
+          Validators.minLength(1)]),
+      seats: new FormControl('',
+        [Validators.required,
+          Validators.minLength(1)]),
+      yearManufactured: new FormControl('',
+        [Validators.required,
+          Validators.minLength(1)])
       }
     );
 
