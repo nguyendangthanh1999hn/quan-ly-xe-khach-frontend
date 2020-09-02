@@ -1,7 +1,7 @@
 export interface Employee {
   id?: number;
-  fullName: string;
   idCard: number;
+  fullName: string;
   idLicense: number;
   licenseType: string;
   address: string;

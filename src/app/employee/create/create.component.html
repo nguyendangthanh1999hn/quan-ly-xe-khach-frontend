@@ -1,1 +1,73 @@
-<p>create works!</p>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Id Card:
+      <br>
+      <input type="text" formControlName="idCard">
+    </label>
+  </div>
+  <div *ngIf="employeeForm.get('idCard').invalid && employeeForm.get('idCard').touched" style="color: red">
+    Id Card is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Full Name:
+      <br>
+      <input type="text"  formControlName="fullName">
+    </label>
+  </div>
+  <div *ngIf="employeeForm.get('fullName').invalid && employeeForm.get('fullName').touched" style="color: red">
+    Full Name is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Id License:
+      <br>
+      <input type="text" formControlName="idLicense" >
+    </label>
+  </div>
+  <div *ngIf="employeeForm.get('idLicense').invalid && employeeForm.get('idLicense').touched" style="color: red">
+    Id License is required and min length is 10
+  </div>
+  <div>
+    <label>
+      License Type:
+      <br>
+      <input  type="text" formControlName="licenseType">
+    </label>
+  </div>
+  <div *ngIf="employeeForm.get('licenseType').invalid && employeeForm.get('licenseType').touched" style="color: red">
+    License Type is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Address:
+      <br>
+      <input  type="text" formControlName="address">
+    </label>
+  </div>
+  <div *ngIf="employeeForm.get('address').invalid && employeeForm.get('address').touched" style="color: red">
+    Address Type is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Birthday:
+      <br>
+      <input  type="date" formControlName="birthday">
+    </label>
+  </div>
+  <div *ngIf="employeeForm.get('birthday').invalid && employeeForm.get('birthday').touched" style="color: red">
+    Birthday Type is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Seniority:
+      <br>
+      <input  type="text" formControlName="seniority">
+    </label>
+  </div>
+  <div *ngIf="employeeForm.get('seniority').invalid && employeeForm.get('seniority').touched" style="color: red">
+    Seniority Type is required and min length is 10
+  </div>
+  <button type="submit">Add Employee</button>
+</form>
