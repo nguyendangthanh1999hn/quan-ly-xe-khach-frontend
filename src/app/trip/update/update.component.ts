@@ -30,15 +30,15 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.tripUpdateForm = new FormGroup({
-      buses: new FormControl('',
-          [Validators.required,
-            Validators.minLength(1)]),
-      driver: new FormControl('',
-          [Validators.required,
-            Validators.minLength(1)]),
-      subDriver: new FormControl('',
-          [Validators.required,
-            Validators.minLength(1)]),
+      buses: this.fb.group({
+        id: ['', [Validators.required]],
+      }),
+      driver: this.fb.group({
+        id: ['', [Validators.required]],
+      }),
+      subDriver: this.fb.group({
+        id: ['', [Validators.required]],
+      }),
       guestNumber: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
@@ -47,7 +47,8 @@ export class UpdateComponent implements OnInit {
           Validators.minLength(1)])
       }
     );
-
+    this.busesService.showBusesList().subscribe( next => (this.busesList = next), error => (this.busesList = []));
+    this.employeeService.showEmployeeList().subscribe( next => (this.employeeList = next), error => (this.employeeList = []));
     const id = +this.route.snapshot.paramMap.get('id');
     this.tripService.getTripById(id)
       .subscribe(result => {
