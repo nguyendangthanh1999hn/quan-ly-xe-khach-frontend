@@ -1,1 +1,32 @@
-<p>list works!</p>
+<h2>List Employee</h2>
+<a [routerLink]="['/employee/create']">Add new employee</a>
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Id Card</th>
+    <th scope="col">Full Name</th>
+    <th scope="col">Id License</th>
+    <th scope="col">License Type</th>
+    <th scope="col">Address</th>
+    <th scope="col">Birthday</th>
+    <th scope="col">Seniority</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of employeeList">
+    <th scope="row">{{employee.id}}</th>
+    <td>{{employee.idCard}}</td>
+    <td>{{employee.fullName}}</td>
+    <td>{{employee.idLicense}}</td>
+    <td>{{employee.licenseType}}</td>
+    <td>{{employee.address}}</td>
+    <td>{{employee.birthday}}</td>
+    <td>{{employee.seniority}}</td>
+    <td>
+      <a [routerLink]="['/employee/update', employee.id]">Edit</a>
+      <button (click)="deleteEmployee(employee.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
