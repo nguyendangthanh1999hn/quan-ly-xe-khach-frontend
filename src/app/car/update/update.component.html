@@ -1,1 +1,68 @@
-<p>update works!</p>
+<form [formGroup]="carUpdateForm" (ngSubmit)="onSubmit()">
+  <div class="form-row form-group">
+    <label class="col-lg-3 text-md-right col-form-label">Color:</label>
+    <br>
+    <div class="col-lg-9">
+      <input type="text" formControlName="color">
+      <div *ngIf="carUpdateForm.get('color').invalid && carUpdateForm.get('color').touched" style="color: red">
+        Color is required and min length is 10
+      </div>
+    </div>
+    <label class="col-lg-3 text-md-right col-form-label">Last Maintenance:</label>
+    <div class="col-lg-9">
+      <input type="date" formControlName="lastMaintenance">
+      <div *ngIf="carUpdateForm.get('lastMaintenance').invalid && carUpdateForm.get('lastMaintenance').touched" style="color: red">
+        Last Maintenance is required and min length is 10
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <label class="col-lg-3 text-md-right col-form-label">License Plate:</label>
+      <br>
+      <input type="text" formControlName="licensePlate">
+      <div *ngIf="carUpdateForm.get('licensePlate').invalid && carUpdateForm.get('licensePlate').touched" style="color: red">
+        License Plate is required and min length is 10
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <label class="col-lg-3 text-md-right col-form-label">Longevity:</label>
+      <br>
+      <input type="text" formControlName="longevity">
+      <div *ngIf="carUpdateForm.get('longevity').invalid && carUpdateForm.get('longevity').touched" style="color: red">
+        Longevity is required and min length is 10
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <label class="col-lg-3 text-md-right col-form-label">Manufactured:</label>
+      <br>
+      <input type="text" formControlName="manufactured">
+      <div *ngIf="carUpdateForm.get('manufactured').invalid && carUpdateForm.get('manufactured').touched" style="color: red">
+        Manufactured is required and min length is 10
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <label class="col-lg-3 text-md-right col-form-label">Model:</label>
+      <br>
+      <input type="text" formControlName="model">
+      <div *ngIf="carUpdateForm.get('model').invalid && carUpdateForm.get('model').touched" style="color: red">
+        Model is required and min length is 10
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <label class="col-lg-3 text-md-right col-form-label">Seats:</label>
+      <br>
+      <input type="text" formControlName="seats">
+      <div *ngIf="carUpdateForm.get('seats').invalid && carUpdateForm.get('seats').touched" style="color: red">
+        Seats is required and min length is 10
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <label class="col-lg-3 text-md-right col-form-label">Year Manufactured:</label>
+      <br>
+      <input type="text" formControlName="yearManufactured">
+      <div *ngIf="carUpdateForm.get('yearManufactured').invalid && carUpdateForm.get('yearManufactured').touched" style="color: red">
+        Year Manufactured is required and min length is 10
+      </div>
+    </div>
+  </div>
+  <button type="submit">Update Book</button>
+</form>
