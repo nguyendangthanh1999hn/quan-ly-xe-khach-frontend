@@ -7,7 +7,7 @@ import {Buses} from '../interface/buses';
   providedIn: 'root'
 })
 export class BusesService {
-  private readonly API_BUSES = 'http://localhost:8080/buses/'; // khai bao API trung voi request mapping trong backend
+  private readonly API_BUSES = 'http://localhost:8080/buses'; // khai bao API trung voi request mapping trong backend
   constructor(private httpClient: HttpClient) { }
 
   showBusesList(): Observable<Buses[]>{

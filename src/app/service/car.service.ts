@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CarService {
 
-  private readonly API_CAR = 'http://localhost:8080/car/'; // khai bao API trung voi request mapping trong backend
+  private readonly API_CAR = 'http://localhost:8080/car'; // khai bao API trung voi request mapping trong backend
   constructor(private httpClient: HttpClient) { }
   showCarList(): Observable<Car[]>{
     return this.httpClient.get<Car[]>(`${this.API_CAR}/list`);
