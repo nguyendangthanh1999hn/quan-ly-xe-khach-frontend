@@ -1,1 +1,44 @@
-<p>update works!</p>
+<form [formGroup]="tripUpdateForm" (ngSubmit)="onSubmit()">
+  <div class="form-row form-group" formGroupName="buses">
+    <label >Buses</label>
+    <select formControlName="id" >
+      <option value="" [disabled]="true">Choose buses</option>
+      <option *ngFor="let buses of busesList" value="{{buses.id}}">{{buses.startLocation}}-{{buses.endLocation}}</option>
+    </select>
+  </div>
+  <div class="form-row form-group" formGroupName="driver">
+    <label >Driver</label>
+    <select formControlName="id" >
+      <option value="" [disabled]="true">Choose employee</option>
+      <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
+    </select>
+  </div>
+  <div class="form-row form-group" formGroupName="subDriver">
+    <label >Sub Driver</label>
+    <select formControlName="id" >
+      <option value="" [disabled]="true">Choose employee</option>
+      <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
+    </select>
+  </div>
+  <div>
+    <label>
+      Guest Number:
+      <br>
+      <input  type="text" formControlName="guestNumber">
+    </label>
+  </div>
+  <div *ngIf="tripUpdateForm.get('guestNumber').invalid && tripUpdateForm.get('guestNumber').touched" style="color: #ff0000">
+    Guest Number is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Price:
+      <br>
+      <input  type="text" formControlName="price">
+    </label>
+  </div>
+  <div *ngIf="tripUpdateForm.get('price').invalid && tripUpdateForm.get('price').touched" style="color: red">
+    Price is required and min length is 10
+  </div>
+  <button type="submit">Update Trip</button>
+</form>
