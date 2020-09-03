@@ -1,5 +1,11 @@
 <h2>List Employee</h2>
 <a [routerLink]="['/employee/create']">Add new employee</a>
+<div class="top-search-area">
+  <form action="index.html" method="post">
+    <input type="search" name="top-search-bar" class="form-control" placeholder="Search" [(ngModel)]="keyword" (keyup.enter) = "search()">
+    <button type="submit" (click) = "search()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
+  </form>
+</div>
 <table class="table">
   <thead class="thead-light">
   <tr>

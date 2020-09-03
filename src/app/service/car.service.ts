@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Car} from '../interface/car';
 import {HttpClient} from '@angular/common/http';
+import {Buses} from '../interface/buses';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class CarService {
 
   private readonly API_CAR = 'http://localhost:8080/car'; // khai bao API trung voi request mapping trong backend
+  private readonly API_FIND_CAR_BY_LICENSE_PLATE = 'http://localhost:8080/car/find-by-license-plate';
   constructor(private httpClient: HttpClient) { }
   showCarList(): Observable<Car[]>{
     return this.httpClient.get<Car[]>(`${this.API_CAR}/list`);
@@ -24,5 +26,8 @@ export class CarService {
   }
   deleteCarByID(id: number): Observable<Car> {
     return this.httpClient.delete<Car>(`${this.API_CAR}/delete/` + `${id}`);
+  }
+  findByLicensePlate(licencePlate: string): Observable<Car[]>{
+    return this.httpClient.get<Car[]>(`${this.API_FIND_CAR_BY_LICENSE_PLATE}/${licencePlate}`);
   }
 }

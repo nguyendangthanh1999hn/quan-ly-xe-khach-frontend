@@ -3,6 +3,7 @@ import {Car} from '../../interface/car';
 import {FormGroup} from '@angular/forms';
 import {CarService} from '../../service/car.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {CarSearchServiceService} from '../../service/searchService/car-search-service.service';
 
 @Component({
   selector: 'app-list',
@@ -13,7 +14,9 @@ export class ListComponent implements OnInit {
 
   carList: Car[] = [];
   failMessage: string;
-  constructor(private carService: CarService) { }
+  keyword: any;
+  constructor(private carService: CarService,
+              private carSearchService: CarSearchServiceService) { }
 
   ngOnInit(): void {
     this.carService.showCarList()
@@ -29,5 +32,18 @@ export class ListComponent implements OnInit {
     }, error => {
       console.log('delete failed');
     });
+  }
+  search(){
+    if (this.keyword !== ''){
+      this.carService.findByLicensePlate(this.keyword).subscribe( data => {
+        this.carList = data;
+        this.carSearchService.changeValue(this.keyword, this.carList);
+      });
+    }else {
+      this.carService.showCarList().subscribe( data => {
+        this.carList = data;
+        this.carSearchService.changeValue(this.keyword, this.carList);
+      });
+    }
   }
 }

@@ -2,7 +2,7 @@
 <a [routerLink]="['/buses/create']">Add new buses</a>
 <div class="top-search-area">
   <form action="index.html" method="post">
-    <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter..." [(ngModel)]="keyword" (keyup.enter) = "search()">
+    <input type="search" name="top-search-bar" class="form-control" placeholder="Search" [(ngModel)]="keyword" (keyup.enter) = "search()">
     <button type="submit" (click) = "search()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
   </form>
 </div>
