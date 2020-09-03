@@ -8,6 +8,7 @@
     <th scope="col">Driver</th>
     <th scope="col">Sub Driver</th>
     <th scope="col">Guest Number</th>
+    <th scope="col">license Plates</th>
     <th scope="col">Price</th>
   </tr>
   </thead>
@@ -18,6 +19,7 @@
     <td>{{trip.driver.fullName}}</td>
     <td>{{trip.subDriver.fullName}}</td>
     <td>{{trip.guestNumber}}</td>
+    <td>{{trip.car.licensePlate}}</td>
     <td>{{trip.price}}</td>
     <td>
       <a [routerLink]="['/trip/update', trip.id]">Edit</a>
