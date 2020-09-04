@@ -6,6 +6,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 
 
+
 const routes: Routes = [
   {
     path: 'buses',
@@ -26,7 +27,7 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
