@@ -1,4 +1,4 @@
-<!-- /. NAV TOP  -->
+<div>
 <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -11,18 +11,16 @@
   </div>
   <div class="header-right">
     <a href="login.html" class="btn btn-danger" title="Login"><i class="fa fa-sign-in "></i></a>
-
   </div>
 </nav>
-
 <nav class="navbar-default navbar-side" role="navigation">
   <div class="sidebar-collapse">
     <ul class="nav" id="main-menu">
       <li>
-        <a class="active-menu" href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
+        <a class="active-menu" routerLink="/"><i class="fa fa-home "></i>Home</a>
       </li>
       <li>
-        <a href="#"><i class="fa fa-desktop "></i>UI Elements <span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-desktop "></i> Data Table <span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
           <li>
             <a routerLink="/car/list"><i class="fa fa-car"></i>Car</a>
@@ -36,11 +34,13 @@
           <li>
             <a routerLink="/buses/list"><i class="fa fa-bus "></i>Buses</a>
           </li>
-          <li>
-            <a href="index.html"><i class="fa fa-sign-out "></i>Sign out</a>
-          </li>
         </ul>
+      </li>
+      <li>
+        <a href="index.html"><i class="fa fa-sign-out "></i>Sign out</a>
       </li>
     </ul>
   </div>
 </nav>
+
+</div>

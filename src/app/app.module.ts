@@ -6,6 +6,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
@@ -32,6 +33,7 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

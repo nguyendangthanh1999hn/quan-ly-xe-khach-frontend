@@ -25,6 +25,7 @@
     <td>{{buses.distance}}</td>
     <td>{{buses.level}}</td>
     <td>
+
       <a [routerLink]="['/buses/update', buses.id]">Edit</a>
       <button (click)="deleteBuses(buses.id)">Delete</button>
     </td>
