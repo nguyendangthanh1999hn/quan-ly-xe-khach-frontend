@@ -2,8 +2,9 @@
 <a [routerLink]="['/buses/create']">Add new buses</a>
 <div class="top-search-area">
   <form action="index.html" method="post">
-    <input type="search" name="top-search-bar" class="form-control" placeholder="Search" [(ngModel)]="keyword" (keyup.enter) = "search()">
-    <button type="submit" (click) = "search()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
+    <input type="search" name="top-search-bar" class="form-control" placeholder="Search Location" [(ngModel)]="keyword"
+           (keyup.enter)="search()">
+    <button type="submit" (click)="search()"><i class="fa fa-search" aria-hidden="true">Search </i></button>
   </form>
 </div>
 <table class="table">
@@ -25,8 +26,9 @@
     <td>{{buses.distance}}</td>
     <td>{{buses.level}}</td>
     <td>
-
-      <a [routerLink]="['/buses/update', buses.id]">Edit</a>
+      <button>
+        <a [routerLink]="['/buses/update', buses.id]">Edit</a>
+      </button>
       <button (click)="deleteBuses(buses.id)">Delete</button>
     </td>
   </tr>

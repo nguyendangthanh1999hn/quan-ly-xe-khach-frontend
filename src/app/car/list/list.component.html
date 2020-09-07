@@ -2,8 +2,9 @@
 <a [routerLink]="['/car/create']">Add new car</a>
 <div class="top-search-area">
   <form action="index.html" method="post">
-    <input type="search" name="top-search-bar" class="form-control" placeholder="Search" [(ngModel)]="keyword" (keyup.enter) = "search()">
-    <button type="submit" (click) = "search()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
+    <input type="search" name="top-search-bar" class="form-control" placeholder="Search License Plate" [(ngModel)]="keyword"
+           (keyup.enter)="search()">
+    <button type="submit" (click)="search()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
   </form>
 </div>
 <table class="table">
@@ -34,7 +35,9 @@
     <td>{{car.seats}}</td>
     <td>{{car.yearManufactured}}</td>
     <td>
-      <a [routerLink]="['/car/update', car.id]">Edit</a>
+      <button>
+        <a [routerLink]="['/car/update', car.id]">Edit</a>
+      </button>
       <button (click)="deleteCar(car.id)">Delete</button>
     </td>
   </tr>
