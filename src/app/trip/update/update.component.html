@@ -30,6 +30,13 @@
   <div *ngIf="tripUpdateForm.get('guestNumber').invalid && tripUpdateForm.get('guestNumber').touched" style="color: #ff0000">
     Guest Number is required and min length is 10
   </div>
+  <div class="form-row form-group" formGroupName="licensePlate">
+    <label>License Plates</label>
+    <select formControlName="id" >
+      <option value="" [disabled]="true">Choose license plate</option>
+      <option *ngFor="let car of carList" value="{{car.id}}">{{car.licensePlate}}</option>
+    </select>
+  </div>
   <div>
     <label>
       Price:

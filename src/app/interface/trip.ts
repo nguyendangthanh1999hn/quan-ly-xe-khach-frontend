@@ -1,5 +1,6 @@
 import {Buses} from './buses';
 import {Employee} from './employee';
+import {Car} from './car';
 
 export interface Trip {
   id?: number;
@@ -8,5 +9,6 @@ export interface Trip {
   subDriver: Employee;
   guestNumber: number;
   price: number;
+  car: Car;
 }
 

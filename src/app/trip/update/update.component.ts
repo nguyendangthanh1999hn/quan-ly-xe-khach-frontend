@@ -7,6 +7,8 @@ import {Buses} from '../../interface/buses';
 import {Employee} from '../../interface/employee';
 import {EmployeeService} from '../../service/employee.service';
 import {BusesService} from '../../service/buses.service';
+import {CarService} from '../../service/car.service';
+import {Car} from '../../interface/car';
 
 @Component({
   selector: 'app-update',
@@ -17,6 +19,7 @@ export class UpdateComponent implements OnInit {
 
   busesList: Buses[] = [];
   employeeList: Employee[] = [];
+  carList: Car[] = [];
   trip: Trip[];
   successMessage: string;
   failMessage: string;
@@ -26,7 +29,8 @@ export class UpdateComponent implements OnInit {
               private routes: Router,
               private fb: FormBuilder,
               private employeeService: EmployeeService,
-              private busesService: BusesService) { }
+              private busesService: BusesService,
+              private carService: CarService) { }
 
   ngOnInit(): void {
     this.tripUpdateForm = new FormGroup({
@@ -42,6 +46,10 @@ export class UpdateComponent implements OnInit {
       guestNumber: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
+
+      licensePlate: this.fb.group({
+        id: ['', [Validators.required]],
+      }),
       price: new FormControl('',
         [Validators.required,
           Validators.minLength(1)])
@@ -49,6 +57,7 @@ export class UpdateComponent implements OnInit {
     );
     this.busesService.showBusesList().subscribe( next => (this.busesList = next), error => (this.busesList = []));
     this.employeeService.showEmployeeList().subscribe( next => (this.employeeList = next), error => (this.employeeList = []));
+    this.carService.showCarList().subscribe( next => (this.carList = next), error => (this.carList = []));
     const id = +this.route.snapshot.paramMap.get('id');
     this.tripService.getTripById(id)
       .subscribe(result => {

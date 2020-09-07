@@ -1,9 +1,9 @@
-<form [formGroup]="busesForm" (ngSubmit)="onSubmit()">
+<form [class.formCreateBuses] [formGroup]="busesForm" (ngSubmit)="onSubmit()" >
   <div>
     <label>
       Start Location:
       <br>
-      <input type="text" formControlName="startLocation">
+      <input type="text" formControlName="startLocation" >
     </label>
   </div>
   <div *ngIf="busesForm.get('startLocation').invalid && busesForm.get('startLocation').touched" style="color: red">

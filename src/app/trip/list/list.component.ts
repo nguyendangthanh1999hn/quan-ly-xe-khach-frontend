@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Trip} from '../../interface/trip';
 import {TripService} from '../../service/trip.service';
+import {TripSearchServiceService} from '../../service/searchService/trip-search-service.service';
 
 @Component({
   selector: 'app-list',
@@ -12,7 +13,9 @@ export class ListComponent implements OnInit {
 
   tripList: Trip[] = [];
   failMessage: string;
-  constructor(private tripService: TripService) { }
+  keyword: any;
+  constructor(private tripService: TripService,
+              private searchTripService: TripSearchServiceService) { }
 
   ngOnInit(): void {
     this.tripService.showTripList()
@@ -28,6 +31,19 @@ export class ListComponent implements OnInit {
     }, error => {
       console.log('delete failed');
     });
+  }
+  search(){
+    if (this.keyword !== ''){
+      this.tripService.findByPrice(this.keyword).subscribe( data => {
+        this.tripList = data;
+        this.searchTripService.changeValue(this.keyword, this.tripList);
+      });
+    }else {
+      this.tripService.showTripList().subscribe( data => {
+        this.tripList = data;
+        this.searchTripService.changeValue(this.keyword, this.tripList);
+      });
+    }
   }
 
 }
