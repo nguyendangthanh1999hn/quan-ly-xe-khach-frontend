@@ -6,10 +6,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  templateUrl: './update.component.html',
+  styleUrls: ['./update.component.css']
 })
-export class EditComponent implements OnInit {
+export class UpdateComponent implements OnInit {
 
   buses: Buses[];
   successMessage: string;

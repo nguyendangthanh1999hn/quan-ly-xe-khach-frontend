@@ -4,7 +4,7 @@ import { ListComponent } from './list/list.component';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CreateComponent } from './create/create.component';
-import { EditComponent } from './edit/edit.component';
+import { UpdateComponent } from './update/update.component';
 
 
 const routes: Routes = [
@@ -18,11 +18,11 @@ const routes: Routes = [
   },
   {
     path: 'update/:id',
-    component: EditComponent
+    component: UpdateComponent
   }
 ];
 @NgModule({
-  declarations: [ListComponent, CreateComponent, EditComponent],
+  declarations: [ListComponent, CreateComponent, UpdateComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
