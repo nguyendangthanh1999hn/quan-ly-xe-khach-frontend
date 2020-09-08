@@ -12,6 +12,10 @@ import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: LayoutComponent
+  },
+  {
     path: 'buses',
     loadChildren: () => import('./buses/buses.module').then(m => m.BusesModule)
   },
