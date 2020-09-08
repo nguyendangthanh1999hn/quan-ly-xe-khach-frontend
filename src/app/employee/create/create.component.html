@@ -7,7 +7,7 @@
     </label>
   </div>
   <div *ngIf="employeeForm.get('idCard').invalid && employeeForm.get('idCard').touched" style="color: red">
-    Id Card is required and min length is 10
+    Id Card is required and min length is 9
   </div>
   <div>
     <label>
@@ -17,7 +17,7 @@
     </label>
   </div>
   <div *ngIf="employeeForm.get('fullName').invalid && employeeForm.get('fullName').touched" style="color: red">
-    Full Name is required and min length is 10
+    Full Name is required and min length is 2
   </div>
   <div>
     <label>
@@ -27,7 +27,7 @@
     </label>
   </div>
   <div *ngIf="employeeForm.get('idLicense').invalid && employeeForm.get('idLicense').touched" style="color: red">
-    Id License is required and min length is 10
+    Id License is required and min length is 7
   </div>
   <div>
     <label>
@@ -37,7 +37,7 @@
     </label>
   </div>
   <div *ngIf="employeeForm.get('licenseType').invalid && employeeForm.get('licenseType').touched" style="color: red">
-    License Type is required and min length is 10
+    License Type is required and min length is 2
   </div>
   <div>
     <label>
@@ -47,7 +47,7 @@
     </label>
   </div>
   <div *ngIf="employeeForm.get('address').invalid && employeeForm.get('address').touched" style="color: red">
-    Address Type is required and min length is 10
+    Address Type is required and min length is 3
   </div>
   <div>
     <label>
@@ -57,7 +57,7 @@
     </label>
   </div>
   <div *ngIf="employeeForm.get('birthday').invalid && employeeForm.get('birthday').touched" style="color: red">
-    Birthday Type is required and min length is 10
+    Birthday is required
   </div>
   <div>
     <label>
@@ -67,7 +67,7 @@
     </label>
   </div>
   <div *ngIf="employeeForm.get('seniority').invalid && employeeForm.get('seniority').touched" style="color: red">
-    Seniority Type is required and min length is 10
+    Seniority is required and in the range 0-9
   </div>
   <button type="submit">Add Employee</button>
 </form>

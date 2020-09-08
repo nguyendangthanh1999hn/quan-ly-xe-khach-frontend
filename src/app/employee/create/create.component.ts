@@ -24,25 +24,24 @@ export class CreateComponent implements OnInit {
       {
         idCard: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(9)]),
         fullName: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
         idLicense: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(7)]),
         licenseType: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
         address: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(3)]),
         birthday: new FormControl('',
-          [Validators.required,
-            Validators.minLength(1)]),
+          [Validators.required]),
         seniority: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)])
+            Validators.pattern('[0-99]')])
       }
     );
   }

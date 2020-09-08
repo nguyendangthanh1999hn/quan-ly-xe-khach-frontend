@@ -1,5 +1,7 @@
-<h2>List Trip</h2>
-<a [routerLink]="['/trip/create']">Add new trip</a>
+<div class="text-center">
+  <h2>List Trip </h2>
+</div>
+<button class="btn-info" [routerLink]="['/trip/create']">Add new trip</button>
 <div class="top-search-area">
   <form action="index.html" method="post">
     <input type="search" name="top-search-bar" class="form-control" placeholder="Search Price" [(ngModel)]="keyword"
@@ -17,6 +19,7 @@
     <th scope="col">Guest Number</th>
     <th scope="col">license Plates</th>
     <th scope="col">Price</th>
+    <th scope="col">Action</th>
   </tr>
   </thead>
   <tbody>
@@ -29,9 +32,11 @@
     <td>{{trip.car.licensePlate}}</td>
     <td>{{trip.price}}</td>
     <td>
-      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0" [routerLink]="['/trip/update',trip.id]">Edit</button></span>
+      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0"
+                                         [routerLink]="['/trip/update',trip.id]">Edit</button></span>
       &nbsp;
-      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="deleteTrip(trip.id)">Delete</button></span>
+      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0"
+                                         (click)="deleteTrip(trip.id)">Delete</button></span>
     </td>
   </tr>
   </tbody>

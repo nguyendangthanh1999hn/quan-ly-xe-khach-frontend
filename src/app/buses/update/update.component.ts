@@ -23,13 +23,13 @@ export class UpdateComponent implements OnInit {
     this.busesUpdateForm = new FormGroup({
       startLocation: new FormControl('',
         [Validators.required,
-          Validators.minLength(1)]),
+          Validators.minLength(4)]),
       endLocation: new FormControl('',
         [Validators.required,
-          Validators.minLength(1)]),
+          Validators.minLength(4)]),
       distance: new FormControl('',
         [Validators.required,
-          Validators.minLength(1)]),
+          Validators.minLength(2)]),
       level: new FormControl('',
         [Validators.required,
           Validators.minLength(1)])

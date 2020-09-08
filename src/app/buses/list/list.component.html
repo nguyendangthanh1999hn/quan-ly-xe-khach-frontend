@@ -1,5 +1,7 @@
-<h2>List Buses</h2>
-<a [routerLink]="['/buses/create']">Add new buses</a>
+<div class="text-center">
+  <h2>List Buses</h2>
+</div>
+<button class="btn-info" [routerLink]="['/buses/create']">Add new buses</button>
 <div class="top-search-area">
   <form action="index.html" method="post">
     <input type="search" name="top-search-bar" class="form-control" placeholder="Search Location" [(ngModel)]="keyword"
@@ -26,9 +28,11 @@
     <td>{{buses.distance}}</td>
     <td>{{buses.level}}</td>
     <td>
-      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0" [routerLink]="['/buses/update',buses.id]">Edit</button></span>
+      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0"
+                                         [routerLink]="['/buses/update',buses.id]">Edit</button></span>
       &nbsp;
-      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="deleteBuses(buses.id)">Delete</button></span>
+      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0"
+                                         (click)="deleteBuses(buses.id)">Delete</button></span>
     </td>
   </tr>
   </tbody>

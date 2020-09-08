@@ -23,25 +23,25 @@ export class UpdateComponent implements OnInit {
     this.employeeUpdateForm = new FormGroup({
       idCard: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(9)]),
       fullName: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
       idLicense: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(7)]),
       licenseType: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
       address: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(3)]),
       birthday: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
       seniority: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)])
+            Validators.pattern('[0-9]')])
       }
     );
 

@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
+import {AuthGuard} from './auth.guard';
 
 
 
@@ -17,19 +18,23 @@ const routes: Routes = [
   },
   {
     path: 'buses',
-    loadChildren: () => import('./buses/buses.module').then(m => m.BusesModule)
+    loadChildren: () => import('./buses/buses.module').then(m => m.BusesModule),
+    // canActivate: [AuthGuard]
   },
   {
     path: 'car',
-    loadChildren: () => import('./car/car.module').then(m => m.CarModule)
+    loadChildren: () => import('./car/car.module').then(m => m.CarModule),
+    // canActivate: [AuthGuard]
   },
   {
     path: 'employee',
-    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
+    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule),
+    // canActivate: [AuthGuard]
   },
   {
     path: 'trip',
-    loadChildren: () => import('./trip/trip.module').then(m => m.TripModule)
+    loadChildren: () => import('./trip/trip.module').then(m => m.TripModule),
+    // canActivate: [AuthGuard]
   }
 ];
 @NgModule({

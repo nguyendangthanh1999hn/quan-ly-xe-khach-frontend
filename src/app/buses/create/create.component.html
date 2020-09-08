@@ -7,7 +7,7 @@
     </label>
   </div>
   <div *ngIf="busesForm.get('startLocation').invalid && busesForm.get('startLocation').touched" style="color: red">
-    Start Location is required and min length is 10
+    Start Location is required and min length is 4
   </div>
   <div>
     <label>
@@ -17,7 +17,7 @@
     </label>
   </div>
   <div *ngIf="busesForm.get('endLocation').invalid && busesForm.get('endLocation').touched" style="color: red">
-    End Location is required and min length is 10
+    End Location is required and min length is 4
   </div>
   <div>
     <label>
@@ -27,7 +27,7 @@
     </label>
   </div>
   <div *ngIf="busesForm.get('distance').invalid && busesForm.get('distance').touched" style="color: red">
-    Distance is required and min length is 10
+    Distance is required and min length is 2
   </div>
   <div>
     <label>
@@ -37,7 +37,7 @@
     </label>
   </div>
   <div *ngIf="busesForm.get('level').invalid && busesForm.get('level').touched" style="color: red">
-    Level is required and min length is 10
+    Level is required and min length is 1
   </div>
   <button type="submit">Add Buses</button>
 </form>

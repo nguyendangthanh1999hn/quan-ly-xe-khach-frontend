@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Car} from '../../interface/car';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validator, Validators} from '@angular/forms';
 import {CarService} from '../../service/car.service';
 import {Router} from '@angular/router';
 
@@ -17,36 +17,40 @@ export class CreateComponent implements OnInit {
   carForm: FormGroup;
 
   constructor(private carService: CarService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     this.carForm = new FormGroup(
       {
         licensePlate: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(4)]),
         color: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
         manufactured: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
         model: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
         yearManufactured: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.pattern('[1945-2020]')]),
         seats: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(20)]),
         longevity: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
-        lastMaintenance: new FormControl(''),
+        lastMaintenance: new FormControl('',
+          [Validators.pattern('[1945-2020]')]),
+
       }
     );
   }
+
   onSubmit(): void {
     if (this.carForm.valid) {
       const {value} = this.carForm;

@@ -23,28 +23,28 @@ export class UpdateComponent implements OnInit {
     this.carUpdateForm = new FormGroup({
         color: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(4)]),
       lastMaintenance: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
       licensePlate: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
       longevity: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.minLength(2)]),
       manufactured: new FormControl('',
         [Validators.required,
-          Validators.minLength(1)]),
+          Validators.pattern('[1945-2020]')]),
       model: new FormControl('',
         [Validators.required,
-          Validators.minLength(1)]),
+          Validators.minLength(2)]),
       seats: new FormControl('',
         [Validators.required,
-          Validators.minLength(1)]),
+          Validators.minLength(20)]),
       yearManufactured: new FormControl('',
         [Validators.required,
-          Validators.minLength(1)])
+          Validators.pattern('[1945-2020]')])
       }
     );
 

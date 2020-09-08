@@ -1,8 +1,11 @@
-<h2>List Car</h2>
-<a [routerLink]="['/car/create']">Add new car</a>
+<div class="text-center">
+  <h2>List Car</h2>
+</div>
+<button class="btn-info" [routerLink]="['/car/create']">Add new car</button>
 <div class="top-search-area">
   <form action="index.html" method="post">
-    <input type="search" name="top-search-bar" class="form-control" placeholder="Search License Plate" [(ngModel)]="keyword"
+    <input type="search" name="top-search-bar" class="form-control" placeholder="Search License Plate"
+           [(ngModel)]="keyword"
            (keyup.enter)="search()">
     <button type="submit" (click)="search()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
   </form>
@@ -20,6 +23,7 @@
     <th scope="col">Model</th>
     <th scope="col">Seats</th>
     <th scope="col">Year Manufactured</th>
+    <th scope="col">Action</th>
   </tr>
   </thead>
   <tbody>
@@ -35,9 +39,11 @@
     <td>{{car.seats}}</td>
     <td>{{car.yearManufactured}}</td>
     <td>
-      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0" [routerLink]="['/car/update',car.id]">Edit</button></span>
+      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0"
+                                         [routerLink]="['/car/update',car.id]">Edit</button></span>
       &nbsp;
-      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="deleteCar(car.id)">Delete</button></span>
+      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0"
+                                         (click)="deleteCar(car.id)">Delete</button></span>
     </td>
   </tr>
   </tbody>

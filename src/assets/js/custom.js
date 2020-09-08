@@ -7,7 +7,7 @@
 
     100% To use For Personal And Commercial Use.
     IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
+
     ========================================================  */
 
 
@@ -18,7 +18,7 @@
         metisMenu: function () {
 
             /*====================================
-            METIS MENU 
+            METIS MENU
             ======================================*/
 
             $('#main-menu').metisMenu();
@@ -47,7 +47,7 @@
         ======================================*/
 
             $('#carousel-example').carousel({
-                interval: 3000 // THIS TIME IS IN MILLI SECONDS
+                interval: 2000 // THIS TIME IS IN MILLI SECONDS
             })
         },
         reviews_fun: function () {
@@ -81,8 +81,8 @@
                 });
             });
         },
-       
-        
+
+
     };
     $(document).ready(function () {
         mainApp.metisMenu();
@@ -90,6 +90,6 @@
         mainApp.slide_show();
         mainApp.reviews_fun();
         mainApp.wizard_fun();
-       
+
     });
 }(jQuery));
