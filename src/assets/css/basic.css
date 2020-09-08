@@ -7,12 +7,12 @@
 
     100% To use For Personal And Commercial Use.
     IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
+
     ========================================================  */
 
 
 /*==============================================
-    BASIC  STYLES    
+    BASIC  STYLES
     =============================================*/
 body {
     font-family: 'Open Sans', sans-serif;
@@ -30,12 +30,12 @@ body {
     background: #F3F3F3;
 }
 
-#page-inner {
+  #page-inner {
     width: 100%;
     margin: 10px 20px 10px 0px;
     background-color: #fff!important;
     padding: 10px;
-    min-height: 1200px;
+    /*min-height: 1200px;*/
 }
 
 .page-head-line {
@@ -60,7 +60,7 @@ body {
 
 
 /*==============================================
-    MENU STYLES    
+    MENU STYLES
     =============================================*/
 
 
@@ -213,7 +213,7 @@ body {
     margin-right: 10px;
 }
 /*==============================================
-    FOOTER  STYLES    
+    FOOTER  STYLES
     =============================================*/
 #footer-sec {
     background-color:#000;
@@ -230,14 +230,13 @@ body {
         text-decoration:none;
     }
 /*==============================================
-    MEDIA QUERIES     
+    MEDIA QUERIES
     =============================================*/
 
 @media (min-width:768px) {
     #page-wrapper {
         margin: 0 0 0 260px;
         padding: 15px 30px;
-        min-height: 1200px;
     }
 
 

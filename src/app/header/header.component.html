@@ -1,5 +1,5 @@
 <div>
-<nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-default navbar-cls-top "  role="navigation" style="margin-bottom: 0">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -10,7 +10,9 @@
     <a class="navbar-brand" href="index.html">COMPANY NAME</a>
   </div>
   <div class="header-right">
-    <a href="login.html" class="btn btn-danger" title="Login"><i class="fa fa-sign-in "></i></a>
+<!--    <button (click)="auth.login()" *ngIf="!auth.loggedIn"><input type="image" src="assets/img/slideshow/login-icon.jpg" /></button>-->
+    <button class="mb-red" (click)="auth.login()" *ngIf="!auth.loggedIn">Login</button>
+    <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
   </div>
 </nav>
 <nav class="navbar-default navbar-side" role="navigation">

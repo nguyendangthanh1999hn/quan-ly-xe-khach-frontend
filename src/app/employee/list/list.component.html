@@ -31,10 +31,9 @@
     <td>{{employee.birthday}}</td>
     <td>{{employee.seniority}}</td>
     <td>
-      <button>
-        <a [routerLink]="['/employee/update', employee.id]">Edit</a>
-      </button>
-      <button (click)="deleteEmployee(employee.id)">Delete</button>
+      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0" [routerLink]="['/employee/update',employee.id]">Edit</button></span>
+      &nbsp;
+      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="deleteEmployee(employee.id)">Delete</button></span>
     </td>
   </tr>
   </tbody>

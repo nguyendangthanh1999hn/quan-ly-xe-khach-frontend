@@ -26,10 +26,9 @@
     <td>{{buses.distance}}</td>
     <td>{{buses.level}}</td>
     <td>
-      <button>
-        <a [routerLink]="['/buses/update', buses.id]">Edit</a>
-      </button>
-      <button (click)="deleteBuses(buses.id)">Delete</button>
+      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0" [routerLink]="['/buses/update',buses.id]">Edit</button></span>
+      &nbsp;
+      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="deleteBuses(buses.id)">Delete</button></span>
     </td>
   </tr>
   </tbody>

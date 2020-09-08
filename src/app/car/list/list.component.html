@@ -35,10 +35,9 @@
     <td>{{car.seats}}</td>
     <td>{{car.yearManufactured}}</td>
     <td>
-      <button>
-        <a [routerLink]="['/car/update', car.id]">Edit</a>
-      </button>
-      <button (click)="deleteCar(car.id)">Delete</button>
+      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0" [routerLink]="['/car/update',car.id]">Edit</button></span>
+      &nbsp;
+      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="deleteCar(car.id)">Delete</button></span>
     </td>
   </tr>
   </tbody>

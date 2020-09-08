@@ -29,10 +29,9 @@
     <td>{{trip.car.licensePlate}}</td>
     <td>{{trip.price}}</td>
     <td>
-      <button>
-        <a [routerLink]="['/trip/update', trip.id]">Edit</a>
-      </button>
-      <button (click)="deleteTrip(trip.id)">Delete</button>
+      <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0" [routerLink]="['/trip/update',trip.id]">Edit</button></span>
+      &nbsp;
+      <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="deleteTrip(trip.id)">Delete</button></span>
     </td>
   </tr>
   </tbody>
