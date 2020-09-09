@@ -20,6 +20,7 @@
     <select formControlName="id">
       <option value="" [disabled]="true">Choose employee</option>
       <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
+      <div *ngIf="tripCreateForm.get('driver')">Driver and Sub Driver is not duplicate</div>
     </select>
   </div>
   <div>
@@ -30,7 +31,7 @@
     </label>
   </div>
   <div *ngIf="tripCreateForm.get('guestNumber').invalid && tripCreateForm.get('guestNumber').touched"
-       style="color: red">
+       style="color: #ff0000">
     Guest Number is required and in the range 1-58
   </div>
   <div>

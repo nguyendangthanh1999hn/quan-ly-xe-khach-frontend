@@ -1,0 +1,27 @@
+<div class="text-center">
+  <h2>Revenue List</h2>
+</div>
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Buses</th>
+    <th scope="col">Guest Number</th>
+    <th scope="col">License Plates</th>
+    <th scope="col">Price</th>
+    <th scope="col">Revenue</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let trip of revenueList">
+    <th scope="row">{{trip.id}}</th>
+    <td>{{trip.buses.startLocation}}-{{trip.buses.endLocation}}</td>
+    <td>{{trip.guestNumber}}</td>
+    <td>{{trip.car.licensePlate}}</td>
+    <td>{{trip.price}}</td>
+    <td>
+      {{trip.guestNumber*trip.price}}
+    </td>
+  </tr>
+  </tbody>
+</table>

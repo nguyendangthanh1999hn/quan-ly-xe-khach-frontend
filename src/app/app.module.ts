@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import {AuthGuard} from './auth.guard';
+import {RevenueComponent} from './revenue/revenue.component';
 
 
 
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent
+  },
+  {
+    path: 'revenue',
+    component: RevenueComponent
   },
   {
     path: 'buses',
@@ -43,6 +48,7 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     LayoutComponent,
+    RevenueComponent
   ],
   imports: [
     BrowserModule,
