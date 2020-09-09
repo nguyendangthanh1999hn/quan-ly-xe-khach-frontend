@@ -1,21 +1,23 @@
 <form [formGroup]="tripCreateForm" (ngSubmit)="onSubmit()">
+  <label>Buses:</label>
   <div class="form-row form-group" formGroupName="buses">
-    <label >Buses</label>
-    <select formControlName="id" >
+
+    <select formControlName="id">
       <option value="" [disabled]="true">Choose buses</option>
-      <option *ngFor="let buses of busesList" value="{{buses.id}}">{{buses.startLocation}}-{{buses.endLocation}}</option>
+      <option *ngFor="let buses of busesList" value="{{buses.id}}">{{buses.startLocation}}
+        -{{buses.endLocation}}</option>
     </select>
   </div>
+  <label>Driver:</label>
   <div class="form-row form-group" formGroupName="driver">
-    <label >Driver</label>
-    <select formControlName="id" >
+    <select formControlName="id">
       <option value="" [disabled]="true">Choose employee</option>
       <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
     </select>
   </div>
+  <label>Sub Driver:</label>
   <div class="form-row form-group" formGroupName="subDriver">
-    <label >Sub Driver</label>
-    <select formControlName="id" >
+    <select formControlName="id">
       <option value="" [disabled]="true">Choose employee</option>
       <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
     </select>
@@ -24,21 +26,23 @@
     <label>
       Guest Number:
       <br>
-      <input  type="text" formControlName="guestNumber">
+      <input type="text" formControlName="guestNumber">
     </label>
   </div>
-  <div *ngIf="tripCreateForm.get('guestNumber').invalid && tripCreateForm.get('guestNumber').touched" style="color: red">
-    Guest Number is required and min length is 10
+  <div *ngIf="tripCreateForm.get('guestNumber').invalid && tripCreateForm.get('guestNumber').touched"
+       style="color: red">
+    Guest Number is required and in the range 1-58
   </div>
   <div>
     <label>
       Price:
       <br>
-      <input  type="text" formControlName="price">
+      <input type="text" formControlName="price">
     </label>
   </div>
   <div *ngIf="tripCreateForm.get('price').invalid && tripCreateForm.get('price').touched" style="color: red">
-    Price is required and min length is 10
+    Price is required and min length is 7
   </div>
+
   <button class="btn btn-primary" type="submit">Add Trip</button>
 </form>

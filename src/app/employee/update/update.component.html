@@ -52,7 +52,7 @@
       <br>
       <input type="text" formControlName="seniority">
       <div *ngIf="employeeUpdateForm.get('seniority').invalid && employeeUpdateForm.get('seniority').touched" style="color: red">
-        Seniority is required and in the range 0-99
+        Seniority is required and min length is 1
       </div>
     </div>
   </div>

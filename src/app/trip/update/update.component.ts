@@ -45,14 +45,14 @@ export class UpdateComponent implements OnInit {
       }),
       guestNumber: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)]),
+            Validators.pattern('[1-58]')]),
 
       licensePlate: this.fb.group({
         id: ['', [Validators.required]],
       }),
       price: new FormControl('',
         [Validators.required,
-          Validators.minLength(1)])
+          Validators.minLength(7)])
       }
     );
     this.busesService.showBusesList().subscribe( next => (this.busesList = next), error => (this.busesList = []));

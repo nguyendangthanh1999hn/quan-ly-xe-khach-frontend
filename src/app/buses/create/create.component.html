@@ -37,7 +37,7 @@
     </label>
   </div>
   <div *ngIf="busesForm.get('level').invalid && busesForm.get('level').touched" style="color: red">
-    Level is required and min length is 1
+    Level is required and  in the range 1-3
   </div>
   <button class="btn btn-primary" type="submit">Add Buses</button>
 </form>

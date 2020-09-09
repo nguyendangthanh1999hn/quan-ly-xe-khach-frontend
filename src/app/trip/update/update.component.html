@@ -33,7 +33,7 @@
   </div>
   <div *ngIf="tripUpdateForm.get('guestNumber').invalid && tripUpdateForm.get('guestNumber').touched"
        style="color: #ff0000">
-    Guest Number is required and min length is 10
+    Guest Number is required and in the range 1-58
   </div>
   <label>License Plates</label>
   <div class="form-row form-group" formGroupName="licensePlate">
@@ -51,7 +51,7 @@
     </label>
   </div>
   <div *ngIf="tripUpdateForm.get('price').invalid && tripUpdateForm.get('price').touched" style="color: red">
-    Price is required and min length is 10
+    Price is required and min length is 7
   </div>
   <button class="btn btn-success" type="submit">Update Trip</button>
 </form>

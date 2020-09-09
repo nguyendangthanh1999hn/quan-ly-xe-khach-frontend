@@ -38,10 +38,11 @@ export class CreateComponent implements OnInit {
           [Validators.required,
             Validators.minLength(3)]),
         birthday: new FormControl('',
-          [Validators.required]),
+          [Validators.required,
+            Validators.minLength(1)]),
         seniority: new FormControl('',
           [Validators.required,
-            Validators.pattern('[0-99]')])
+            Validators.minLength(1)])
       }
     );
   }

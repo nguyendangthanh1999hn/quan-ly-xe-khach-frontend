@@ -41,7 +41,7 @@ export class UpdateComponent implements OnInit {
             Validators.minLength(1)]),
       seniority: new FormControl('',
           [Validators.required,
-            Validators.pattern('[0-99]')])
+            Validators.minLength(1)])
       }
     );
 

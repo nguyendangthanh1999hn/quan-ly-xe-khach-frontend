@@ -33,7 +33,7 @@ export class CreateComponent implements OnInit {
             Validators.minLength(2)]),
         level: new FormControl('',
           [Validators.required,
-            Validators.minLength(1)])
+            Validators.pattern('[1-3]')])
       }
     );
   }
