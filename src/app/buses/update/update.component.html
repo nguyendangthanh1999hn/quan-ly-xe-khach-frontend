@@ -1,33 +1,36 @@
 <form [formGroup]="busesUpdateForm" (ngSubmit)="onSubmit()">
-<div class="form-row form-group">
-  <label class="col-lg-3 text-md-right col-form-label">Start Location</label>
-  <div class="col-lg-9">
-    <input type="text" formControlName="startLocation">
-    <div *ngIf="busesUpdateForm.get('startLocation').invalid && busesUpdateForm.get('startLocation').touched" style="color: red">
-      Start location is required and min length is 4
+  <div class="form-row form-group">
+    <label class="col-lg-3 text-md-right col-form-label">Start Location</label>
+    <div class="col-lg-9">
+      <input type="text" formControlName="startLocation">
+      <div *ngIf="busesUpdateForm.get('startLocation').invalid && busesUpdateForm.get('startLocation').touched"
+           style="color: red">
+        Start location is required and min length is 4
+      </div>
     </div>
-  </div>
-  <label class="col-lg-3 text-md-right col-form-label">End Location</label>
-  <div class="col-lg-9">
-    <input type="text" formControlName="endLocation">
-    <div *ngIf="busesUpdateForm.get('endLocation').invalid && busesUpdateForm.get('endLocation').touched" style="color: red">
-      End location is required and min length is 4
+    <label class="col-lg-3 text-md-right col-form-label">End Location</label>
+    <div class="col-lg-9">
+      <input type="text" formControlName="endLocation">
+      <div *ngIf="busesUpdateForm.get('endLocation').invalid && busesUpdateForm.get('endLocation').touched"
+           style="color: red">
+        End location is required and min length is 4
+      </div>
     </div>
-  </div>
-  <div class="col-lg-9">
     <label class="col-lg-3 te xt-md-right col-form-label">Distance</label>
-    <input type="text" formControlName="distance">
-    <div *ngIf="busesUpdateForm.get('distance').invalid && busesUpdateForm.get('distance').touched" style="color: red">
-      Start location is required and min length is 2
+    <div class="col-lg-9">
+      <input type="text" formControlName="distance">
+      <div *ngIf="busesUpdateForm.get('distance').invalid && busesUpdateForm.get('distance').touched"
+           style="color: red">
+        Start location is required and min length is 2
+      </div>
     </div>
-  </div>
-  <div class="col-lg-9">
     <label class="col-lg-3 text-md-right col-form-label">Level</label>
-    <input type="text" formControlName="level">
-    <div *ngIf="busesUpdateForm.get('level').invalid && busesUpdateForm.get('level').touched" style="color: red">
-      Start location is required and min length is 1
+    <div class="col-lg-9">
+      <input type="text" formControlName="level">
+      <div *ngIf="busesUpdateForm.get('level').invalid && busesUpdateForm.get('level').touched" style="color: red">
+        Start location is required and min length is 1
+      </div>
     </div>
   </div>
-</div>
-  <button type="submit">Update Buses</button>
+  <button class="btn btn-success" type="submit">Update Buses</button>
 </form>

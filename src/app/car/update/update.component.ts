@@ -35,7 +35,7 @@ export class UpdateComponent implements OnInit {
             Validators.minLength(2)]),
       manufactured: new FormControl('',
         [Validators.required,
-          Validators.pattern('[1945-2020]')]),
+          Validators.pattern('[0-2020]')]),
       model: new FormControl('',
         [Validators.required,
           Validators.minLength(2)]),
@@ -44,7 +44,7 @@ export class UpdateComponent implements OnInit {
           Validators.minLength(20)]),
       yearManufactured: new FormControl('',
         [Validators.required,
-          Validators.pattern('[1945-2020]')])
+          Validators.pattern('[0-2020]')])
       }
     );
 

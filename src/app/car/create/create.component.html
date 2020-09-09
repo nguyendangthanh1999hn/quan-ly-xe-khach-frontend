@@ -7,7 +7,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('color').invalid && carForm.get('color').touched" style="color: red">
-    Color is required and min length is 10
+    Color is required and min length is 2
   </div>
   <div>
     <label>
@@ -17,7 +17,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('lastMaintenance').invalid && carForm.get('lastMaintenance').touched" style="color: red">
-    Last Maintenance is required and min length is 10
+    Last Maintenance is required and in the range 1945-2020
   </div>
   <div>
     <label>
@@ -27,7 +27,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('licensePlate').invalid && carForm.get('licensePlate').touched" style="color: red">
-    License Plate is required and min length is 10
+    License Plate is required and min length is 4
   </div>
   <div>
     <label>
@@ -37,7 +37,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('longevity').invalid && carForm.get('longevity').touched" style="color: red">
-    Longevity is required and min length is 10
+    Longevity is required and min length is 1
   </div>
   <div>
     <label>
@@ -47,7 +47,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('manufactured').invalid && carForm.get('manufactured').touched" style="color: red">
-    Manufactured is required and min length is 10
+    Manufactured is required and min length is 4
   </div>
   <div>
     <label>
@@ -67,7 +67,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('seats').invalid && carForm.get('seats').touched" style="color: red">
-    Seats is required and min length is 10
+    Seats is required and min length is 20
   </div>
   <div>
     <label>
@@ -77,7 +77,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('yearManufactured').invalid && carForm.get('yearManufactured').touched" style="color: red">
-    Year Manufactured is required and min length is 10
+    Year Manufactured is required in the range 1945-2020
   </div>
-  <button type="submit">Add Car</button>
+  <button class="btn btn-primary" type="submit">Add Car</button>
 </form>

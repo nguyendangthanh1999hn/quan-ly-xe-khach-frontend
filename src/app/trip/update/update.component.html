@@ -1,21 +1,25 @@
 <form [formGroup]="tripUpdateForm" (ngSubmit)="onSubmit()">
+  <label>Buses</label>
   <div class="form-row form-group" formGroupName="buses">
-    <label >Buses</label>
-    <select formControlName="id" >
+
+    <select formControlName="id">
       <option value="" [disabled]="true">Choose buses</option>
-      <option *ngFor="let buses of busesList" value="{{buses.id}}">{{buses.startLocation}}-{{buses.endLocation}}</option>
+      <option *ngFor="let buses of busesList" value="{{buses.id}}">{{buses.startLocation}}
+        -{{buses.endLocation}}</option>
     </select>
   </div>
+  <label>Driver</label>
   <div class="form-row form-group" formGroupName="driver">
-    <label >Driver</label>
-    <select formControlName="id" >
+
+    <select formControlName="id">
       <option value="" [disabled]="true">Choose employee</option>
       <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
     </select>
   </div>
+  <label>Sub Driver</label>
   <div class="form-row form-group" formGroupName="subDriver">
-    <label >Sub Driver</label>
-    <select formControlName="id" >
+
+    <select formControlName="id">
       <option value="" [disabled]="true">Choose employee</option>
       <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
     </select>
@@ -24,15 +28,17 @@
     <label>
       Guest Number:
       <br>
-      <input  type="text" formControlName="guestNumber">
+      <input type="text" formControlName="guestNumber">
     </label>
   </div>
-  <div *ngIf="tripUpdateForm.get('guestNumber').invalid && tripUpdateForm.get('guestNumber').touched" style="color: #ff0000">
+  <div *ngIf="tripUpdateForm.get('guestNumber').invalid && tripUpdateForm.get('guestNumber').touched"
+       style="color: #ff0000">
     Guest Number is required and min length is 10
   </div>
+  <label>License Plates</label>
   <div class="form-row form-group" formGroupName="licensePlate">
-    <label>License Plates</label>
-    <select formControlName="id" >
+
+    <select formControlName="id">
       <option value="" [disabled]="true">Choose license plate</option>
       <option *ngFor="let car of carList" value="{{car.id}}">{{car.licensePlate}}</option>
     </select>
@@ -41,11 +47,11 @@
     <label>
       Price:
       <br>
-      <input  type="text" formControlName="price">
+      <input type="text" formControlName="price">
     </label>
   </div>
   <div *ngIf="tripUpdateForm.get('price').invalid && tripUpdateForm.get('price').touched" style="color: red">
     Price is required and min length is 10
   </div>
-  <button type="submit">Update Trip</button>
+  <button class="btn btn-success" type="submit">Update Trip</button>
 </form>

@@ -5,14 +5,14 @@
     <div class="col-lg-9">
       <input type="text" formControlName="idCard">
       <div *ngIf="employeeUpdateForm.get('idCard').invalid && employeeUpdateForm.get('idCard').touched" style="color: red">
-        Id Card is required and min length is 10
+        Id Card is required and min length is 9
       </div>
     </div>
     <label class="col-lg-3 text-md-right col-form-label">Full Name:</label>
     <div class="col-lg-9">
       <input type="text" formControlName="fullName">
       <div *ngIf="employeeUpdateForm.get('fullName').invalid && employeeUpdateForm.get('fullName').touched" style="color: red">
-        Full Name is required and min length is 10
+        Full Name is required and min length is 2
       </div>
     </div>
     <div class="col-lg-9">
@@ -20,7 +20,7 @@
       <br>
       <input type="text" formControlName="idLicense">
       <div *ngIf="employeeUpdateForm.get('idLicense').invalid && employeeUpdateForm.get('idLicense').touched" style="color: red">
-        Id License is required and min length is 10
+        Id License is required and min length is 7
       </div>
     </div>
     <div class="col-lg-9">
@@ -28,7 +28,7 @@
       <br>
       <input type="text" formControlName="licenseType">
       <div *ngIf="employeeUpdateForm.get('licenseType').invalid && employeeUpdateForm.get('licenseType').touched" style="color: red">
-        License Type is required and min length is 10
+        License Type is required and min length is 2
       </div>
     </div>
     <div class="col-lg-9">
@@ -44,7 +44,7 @@
       <br>
       <input type="date" formControlName="birthday">
       <div *ngIf="employeeUpdateForm.get('birthday').invalid && employeeUpdateForm.get('birthday').touched" style="color: red">
-        Birthday is required and min length is 10
+        Birthday is required and min length is 3
       </div>
     </div>
     <div class="col-lg-9">
@@ -52,9 +52,9 @@
       <br>
       <input type="text" formControlName="seniority">
       <div *ngIf="employeeUpdateForm.get('seniority').invalid && employeeUpdateForm.get('seniority').touched" style="color: red">
-        Seniority is required and min length is 10
+        Seniority is required and in the range 0-99
       </div>
     </div>
   </div>
-  <button type="submit">Update Employee</button>
+  <button class="btn btn-success" type="submit">Update Employee</button>
 </form>
