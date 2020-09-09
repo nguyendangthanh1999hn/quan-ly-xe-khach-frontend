@@ -6,6 +6,9 @@
       <option value="" [disabled]="true">Choose buses</option>
       <option *ngFor="let buses of busesList" value="{{buses.id}}">{{buses.startLocation}}
         -{{buses.endLocation}}</option>
+      <div *ngIf="tripCreateForm.get('buses').get('id').invalid && tripCreateForm.get('buses').get('id').touched" style="color: red">
+        Buses is required
+      </div>
     </select>
   </div>
   <label>Driver:</label>
@@ -13,6 +16,9 @@
     <select formControlName="id">
       <option value="" [disabled]="true">Choose employee</option>
       <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
+      <div *ngIf="tripCreateForm.get('driver').get('id').invalid && tripCreateForm.get('driver').get('id').touched" style="color: red">
+        Driver is required
+      </div>
     </select>
   </div>
   <label>Sub Driver:</label>
@@ -20,7 +26,9 @@
     <select formControlName="id">
       <option value="" [disabled]="true">Choose employee</option>
       <option *ngFor="let employee of employeeList" value="{{employee.id}}">{{employee.fullName}}</option>
-      <div *ngIf="tripCreateForm.get('driver')">Driver and Sub Driver is not duplicate</div>
+      <div *ngIf="tripCreateForm.get('subDriver').get('id').invalid && tripCreateForm.get('subDriver').get('id').touched" style="color: red">
+        Sub Driver is required
+      </div>
     </select>
   </div>
   <label>License Plates</label>
@@ -28,6 +36,9 @@
     <select formControlName="id">
       <option value="" [disabled]="true">Choose Car</option>
       <option *ngFor="let car of carList" value="{{car.id}}">{{car.licensePlate}}</option>
+      <div *ngIf="tripCreateForm.get('licensePlates').get('id').invalid && tripCreateForm.get('licensePlates').get('id').touched" style="color: red">
+        License Plates is required
+      </div>
     </select>
   </div>
   <div>
@@ -49,7 +60,7 @@
     </label>
   </div>
   <div *ngIf="tripCreateForm.get('price').invalid && tripCreateForm.get('price').touched" style="color: red">
-    Price is required and min length is 7
+    Price is required and min length is 5
   </div>
 
   <button class="btn btn-primary" type="submit">Add Trip</button>

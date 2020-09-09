@@ -42,8 +42,8 @@ export class CreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.tripCreateForm = this.fb.group({
-      guestNumber: ['', [Validators.required, Validators.pattern('[1-58]')]],
-      price: ['', [Validators.required, Validators.minLength(7)]],
+      guestNumber: ['', [Validators.required, Validators.minLength(1)]],
+      price: ['', [Validators.required, Validators.minLength(5)]],
       buses: this.fb.group({
           id: ['', [Validators.required]],
         },

@@ -37,7 +37,7 @@ export class CreateComponent implements OnInit {
             Validators.minLength(2)]),
         manufactured: new FormControl('',
           [Validators.required,
-            Validators.minLength(2)]),
+            Validators.min(1945), Validators.max(2020)]),
         model: new FormControl('',
           [Validators.required,
             Validators.minLength(2)]),
@@ -46,13 +46,12 @@ export class CreateComponent implements OnInit {
             Validators.minLength(4)]),
         seats: new FormControl('',
           [Validators.required,
-            Validators.minLength(2)]),
+            Validators.min(1), Validators.max(99)]),
         longevity: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
         lastMaintenance: new FormControl('',
-          [Validators.minLength(4)]),
-
+          [Validators.required])
       }
     );
   }

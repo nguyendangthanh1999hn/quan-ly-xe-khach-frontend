@@ -9,7 +9,7 @@ import {EmployeeService} from '../../service/employee.service';
 import {BusesService} from '../../service/buses.service';
 import {CarService} from '../../service/car.service';
 import {Car} from '../../interface/car';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update',
@@ -52,14 +52,14 @@ export class UpdateComponent implements OnInit {
       }),
       guestNumber: new FormControl('',
           [Validators.required,
-            Validators.pattern('[1-58]')]),
+            Validators.minLength(1)]),
 
       licensePlate: this.fb.group({
         id: ['', [Validators.required]],
       }),
       price: new FormControl('',
         [Validators.required,
-          Validators.minLength(7)])
+          Validators.minLength(5)])
       }
     );
     this.busesService.showBusesList().subscribe( next => (this.busesList = next), error => (this.busesList = []));

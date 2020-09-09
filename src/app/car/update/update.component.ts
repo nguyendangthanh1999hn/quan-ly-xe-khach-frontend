@@ -3,7 +3,7 @@ import {Car} from '../../interface/car';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CarService} from '../../service/car.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update',
