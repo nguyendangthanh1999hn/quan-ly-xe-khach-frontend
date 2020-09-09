@@ -17,7 +17,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('lastMaintenance').invalid && carForm.get('lastMaintenance').touched" style="color: red">
-    Last Maintenance is required and in the range 1945-2020
+    Last Maintenance is required and min length is 4
   </div>
   <div>
     <label>
@@ -77,7 +77,7 @@
     </label>
   </div>
   <div *ngIf="carForm.get('yearManufactured').invalid && carForm.get('yearManufactured').touched" style="color: red">
-    Year Manufactured is required in the range 1945-2020
+    Year Manufactured is required and min length is 4
   </div>
   <button class="btn btn-primary" type="submit">Add Car</button>
 </form>

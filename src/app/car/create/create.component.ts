@@ -37,15 +37,15 @@ export class CreateComponent implements OnInit {
             Validators.minLength(2)]),
         yearManufactured: new FormControl('',
           [Validators.required,
-            Validators.pattern('[0-2020]')]),
+            Validators.minLength(4)]),
         seats: new FormControl('',
           [Validators.required,
-            Validators.minLength(20)]),
+            Validators.minLength(2)]),
         longevity: new FormControl('',
           [Validators.required,
             Validators.minLength(1)]),
         lastMaintenance: new FormControl('',
-          [Validators.pattern('[0-2020]')]),
+          [Validators.minLength(4)]),
 
       }
     );

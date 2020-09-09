@@ -64,7 +64,7 @@
       <input type="text" formControlName="yearManufactured">
       <div *ngIf="carUpdateForm.get('yearManufactured').invalid && carUpdateForm.get('yearManufactured').touched"
            style="color: red">
-        Year Manufactured is required and in the range 1945-2020
+        Year Manufactured is required and min length is 4
       </div>
     </div>
     <button class="btn btn-success" type="submit">Update Car</button>
