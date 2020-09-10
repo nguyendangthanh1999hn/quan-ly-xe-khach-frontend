@@ -18,9 +18,9 @@
     <td>{{trip.buses.startLocation}}-{{trip.buses.endLocation}}</td>
     <td>{{trip.guestNumber}}</td>
     <td>{{trip.car.licensePlate}}</td>
-    <td>{{trip.price}}</td>
+    <td type="number">{{trip.price}}</td>
     <td>
-      {{trip.guestNumber*trip.price}}
+      {{trip.guestNumber * trip.price}}
     </td>
   </tr>
   </tbody>
