@@ -3,6 +3,7 @@ import {Car} from '../../interface/car';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CarService} from '../../service/car.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-update',
@@ -15,6 +16,12 @@ export class UpdateComponent implements OnInit {
   successMessage: string;
   failMessage: string;
   carUpdateForm: FormGroup;
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
   constructor(private carService: CarService,
               private route: ActivatedRoute,
               private routes: Router) { }
@@ -68,11 +75,18 @@ export class UpdateComponent implements OnInit {
       };
       this.carService.updateCar(data)
         .subscribe(result => {
+          this.updateSuccess();
           this.routes.navigate(['car/list']);
         }, error => {
           console.log(error);
         });
     }
+  }
+  updateSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: ' Update success '
+    });
   }
 }
 

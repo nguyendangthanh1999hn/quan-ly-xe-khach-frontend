@@ -3,6 +3,7 @@ import {Employee} from '../../interface/employee';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {EmployeeService} from '../../service/employee.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update',
@@ -15,6 +16,12 @@ export class UpdateComponent implements OnInit {
   successMessage: string;
   failMessage: string;
   employeeUpdateForm: FormGroup;
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
   constructor(private employeeService: EmployeeService,
               private route: ActivatedRoute,
               private routes: Router) { }
@@ -65,10 +72,17 @@ export class UpdateComponent implements OnInit {
       };
       this.employeeService.updateEmployee(data)
         .subscribe(result => {
+          this.updateSuccess();
           this.routes.navigate(['employee/list']);
         }, error => {
           console.log(error);
         });
     }
+  }
+  updateSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: ' Update success '
+    });
   }
 }

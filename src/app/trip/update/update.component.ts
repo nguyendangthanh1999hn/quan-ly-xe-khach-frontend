@@ -9,6 +9,7 @@ import {EmployeeService} from '../../service/employee.service';
 import {BusesService} from '../../service/buses.service';
 import {CarService} from '../../service/car.service';
 import {Car} from '../../interface/car';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-update',
@@ -24,6 +25,12 @@ export class UpdateComponent implements OnInit {
   successMessage: string;
   failMessage: string;
   tripUpdateForm: FormGroup;
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
   constructor(private tripService: TripService,
               private route: ActivatedRoute,
               private routes: Router,
@@ -78,10 +85,17 @@ export class UpdateComponent implements OnInit {
       };
       this.tripService.updateTrip(data)
         .subscribe(result => {
+          this.updateSuccess();
           this.routes.navigate(['trip/list']);
         }, error => {
           console.log(error);
         });
     }
+  }
+  updateSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: ' Update success '
+    });
   }
 }

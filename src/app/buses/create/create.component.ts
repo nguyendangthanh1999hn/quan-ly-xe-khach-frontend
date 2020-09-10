@@ -3,6 +3,7 @@ import {Buses} from '../../interface/buses';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {BusesService} from '../../service/buses.service';
 import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create',
@@ -13,8 +14,13 @@ export class CreateComponent implements OnInit {
 
   busesList: Buses[] = [];
   failMessage: string;
-  successMessage: string;
   busesForm: FormGroup;
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
 
   constructor(private busesService: BusesService,
               private router: Router) { }
@@ -44,16 +50,16 @@ export class CreateComponent implements OnInit {
         .subscribe(result => {
           this.busesList.push(result);
           this.router.navigate(['buses/list']);
-          this.successMessage = 'Add buses successfully !';
-          // this.busesForm.reset({
-          //   startLocation: '',
-          //   endLocation: '',
-          //   distance: '',
-          //   level: '',
-          // });
+          this.createSuccess();
         }, error => {
           this.failMessage = 'Add buses fail !';
         });
     }
+  }
+  createSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: ' Create success '
+    });
   }
 }

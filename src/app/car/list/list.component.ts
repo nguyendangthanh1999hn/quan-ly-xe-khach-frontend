@@ -4,6 +4,7 @@ import {FormGroup} from '@angular/forms';
 import {CarService} from '../../service/car.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CarSearchServiceService} from '../../service/searchService/car-search-service.service';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-list',
@@ -15,6 +16,12 @@ export class ListComponent implements OnInit {
   carList: Car[] = [];
   failMessage: string;
   keyword: any;
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
   constructor(private carService: CarService,
               private carSearchService: CarSearchServiceService) { }
 
@@ -28,9 +35,16 @@ export class ListComponent implements OnInit {
   }
   deleteCar(id: number) {
     this.carService.deleteCarByID(id).subscribe( () => {
+      this.deleteSuccess()
       this.ngOnInit();
     }, error => {
       console.log('delete failed');
+    });
+  }
+  deleteSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: 'Delete success'
     });
   }
   search(){

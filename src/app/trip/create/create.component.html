@@ -23,6 +23,13 @@
       <div *ngIf="tripCreateForm.get('driver')">Driver and Sub Driver is not duplicate</div>
     </select>
   </div>
+  <label>License Plates</label>
+  <div class="form-row form-group" formGroupName="licensePlates">
+    <select formControlName="id">
+      <option value="" [disabled]="true">Choose Car</option>
+      <option *ngFor="let car of carList" value="{{car.id}}">{{car.licensePlate}}</option>
+    </select>
+  </div>
   <div>
     <label>
       Guest Number:

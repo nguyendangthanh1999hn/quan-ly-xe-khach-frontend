@@ -7,6 +7,9 @@ import {EmployeeService} from '../../service/employee.service';
 import {BusesService} from '../../service/buses.service';
 import {Buses} from '../../interface/buses';
 import {Employee} from '../../interface/employee';
+import {CarService} from '../../service/car.service';
+import {Car} from '../../interface/car';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-create',
@@ -19,15 +22,23 @@ export class CreateComponent implements OnInit {
               private router: Router,
               private fb: FormBuilder,
               private employeeService: EmployeeService,
-              private busesService: BusesService) {
+              private busesService: BusesService,
+              private carService: CarService) {
   }
 
   tripList: Trip[] = [];
   busesList: Buses[] = [];
+  carList: Car[] = [];
   employeeList: Employee[] = [];
   failMessage: string;
   successMessage: string;
   tripCreateForm: FormGroup;
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
 
   ngOnInit(): void {
     this.tripCreateForm = this.fb.group({
@@ -44,10 +55,15 @@ export class CreateComponent implements OnInit {
       subDriver: this.fb.group({
           id: ['', [Validators.required]],
         },
+      ),
+      licensePlates: this.fb.group({
+          id: ['', [Validators.required]],
+        },
       )
     });
     this.employeeService.showEmployeeList().subscribe(next => (this.employeeList = next), error => (this.employeeList = []));
     this.busesService.showBusesList().subscribe(next => (this.busesList = next), error => (this.busesList = []));
+    this.carService.showCarList().subscribe(next => (this.carList = next), error => (this.carList = []));
   }
 
   onSubmit(): void {
@@ -56,11 +72,18 @@ export class CreateComponent implements OnInit {
       this.tripService.createTrip(value)
         .subscribe(result => {
           this.tripList.push(result);
+          this.createSuccess();
           this.router.navigate(['trip/list']);
           this.successMessage = 'Add trip successfully !';
         }, error => {
           this.failMessage = 'Add trip fail !';
         });
     }
+  }
+  createSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: ' Create success '
+    });
   }
 }

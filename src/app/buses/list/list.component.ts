@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Buses} from '../../interface/buses';
 import {BusesService} from '../../service/buses.service';
 import {BusesSearchServiceService} from '../../service/searchService/buses-search-service.service';
+import Swal from "sweetalert2";
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -12,6 +13,12 @@ export class ListComponent implements OnInit {
   busesList: Buses[] = [];
   failMessage: string;
   keyword: any;
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
   constructor(private busesService: BusesService,
               private busesSearchService: BusesSearchServiceService) { }
 
@@ -26,9 +33,16 @@ export class ListComponent implements OnInit {
   }
   deleteBuses(id: number) {
     this.busesService.deleteBusesByID(id).subscribe( () => {
+      this.deleteSuccess();
       this.ngOnInit();
     }, error => {
       console.log('delete failed');
+    });
+  }
+  deleteSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: 'Delete success'
     });
   }
   search(){

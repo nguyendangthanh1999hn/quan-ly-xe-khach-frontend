@@ -3,6 +3,7 @@ import {Employee} from '../../interface/employee';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {EmployeeService} from '../../service/employee.service';
 import {Router} from '@angular/router';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-create',
@@ -15,7 +16,12 @@ export class CreateComponent implements OnInit {
   failMessage: string;
   successMessage: string;
   employeeForm: FormGroup;
-
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
   constructor(private employeeService: EmployeeService,
               private router: Router) { }
 
@@ -52,18 +58,18 @@ export class CreateComponent implements OnInit {
       this.employeeService.createEmployee(value)
         .subscribe(result => {
           this.employeeList.push(result);
+          this.createSuccess();
           this.router.navigate(['employee/list']);
           this.successMessage = 'Add employee successfully !';
-          // this.employeeForm.reset({
-          //   startLocation: '',
-          //   endLocation: '',
-          //   distance: '',
-          //   level: '',
-          // });
         }, error => {
           this.failMessage = 'Add employee fail !';
         });
     }
   }
-
+  createSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: ' Create success '
+    });
+  }
 }

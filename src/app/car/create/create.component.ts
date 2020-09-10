@@ -3,6 +3,7 @@ import {Car} from '../../interface/car';
 import {FormControl, FormGroup, Validator, Validators} from '@angular/forms';
 import {CarService} from '../../service/car.service';
 import {Router} from '@angular/router';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-create',
@@ -15,7 +16,12 @@ export class CreateComponent implements OnInit {
   failMessage: string;
   successMessage: string;
   carForm: FormGroup;
-
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
   constructor(private carService: CarService,
               private router: Router) {
   }
@@ -57,6 +63,7 @@ export class CreateComponent implements OnInit {
       this.carService.createCar(value)
         .subscribe(result => {
           this.carList.push(result);
+          this.createSuccess()
           this.router.navigate(['car/list']);
           this.successMessage = 'Add car successfully !';
         }, error => {
@@ -64,5 +71,10 @@ export class CreateComponent implements OnInit {
         });
     }
   }
-
+  createSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: ' Create success '
+    });
+  }
 }

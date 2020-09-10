@@ -3,6 +3,7 @@ import {Buses} from '../../interface/buses';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {BusesService} from '../../service/buses.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-edit',
@@ -15,6 +16,12 @@ export class UpdateComponent implements OnInit {
   successMessage: string;
   failMessage: string;
   busesUpdateForm: FormGroup;
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
   constructor(private busesService: BusesService,
               private route: ActivatedRoute,
               private routes: Router) { }
@@ -56,10 +63,17 @@ export class UpdateComponent implements OnInit {
       };
       this.busesService.updateBuses(data)
         .subscribe(result => {
+          this.updateSuccess();
           this.routes.navigate(['buses/list']);
         }, error => {
           console.log(error);
         });
     }
+  }
+  updateSuccess(){
+    this.Toast.fire({
+      icon: 'success',
+      title: ' Update success '
+    });
   }
 }
