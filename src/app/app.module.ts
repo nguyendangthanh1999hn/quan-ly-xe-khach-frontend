@@ -24,22 +24,22 @@ const routes: Routes = [
   {
     path: 'buses',
     loadChildren: () => import('./buses/buses.module').then(m => m.BusesModule),
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'car',
     loadChildren: () => import('./car/car.module').then(m => m.CarModule),
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'employee',
     loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule),
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'trip',
     loadChildren: () => import('./trip/trip.module').then(m => m.TripModule),
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   }
 ];
 @NgModule({
